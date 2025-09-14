@@ -2,6 +2,37 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Prompt
+
+Create a Confluent Cloud Kafka cluster sizing calculator as a React SPA with:
+Business Requirements:
+* 5 domains: Customer (cust), Commercial (comm), Corporate (corp), Airline Operations (aops), easyJet Holidays (hols)
+* 4 environments: dev, tst, pre, prd
+* Single cluster vs cluster-per-domain options
+* ECKU-based capacity planning with GBP pricing
+* Data persistence across browser sessions
+Domain Structure:
+* cust: marketing, customer_engagement_and_personalisation, customer_management, sales, loyalty
+* comm: trading_and_revenue_management, network_and_scheduling, commercial_partnerships, passenger_reservation_and_management, product_and_offer_management
+* corp: people, facilities, finance_and_risk, legal_and_compliance
+* aops: airport_operations, engineering_and_safety, scheduling_and_crew_rostering, aircraft_and_crew_management, flight_operations
+* hols: search_compare, itinerary, scheduling, payment, availability, booking, notification, support
+Technical Features:
+* Tabbed interface (Domain Inputs | Sizing Results | Cost Summary)
+* Input fields: messages/sec, message size, retention, replication factor, partitions, peak multiplier, compression
+* Environment scaling factors per domain
+* Topic naming convention: {domain}.{subdomain}.{type}.v{version}
+* CSV/PDF export functionality
+* Confluent Cloud ECKU pricing tiers (Basic/Standard/Dedicated)
+* Cost breakdown by domain and environment
+* Best practices guidance
+UI Requirements:
+* Modern React with hooks, proper component structure
+* Use £ symbol for currency
+* Responsive design with Tailwind CSS
+* Error-free, production-ready code
+
+
 ## Available Scripts
 
 In the project directory, you can run:
